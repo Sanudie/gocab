@@ -145,7 +145,7 @@
         <nav id="nav">
           <ul>
             <li><a href="#">Home</a></li>
-            <li><a href="#">My Rides</a></li>
+            <li><a href="#">Book a ride</a></li>
             <li><a href="#">Offers</a></li>
             <li><a href="#">Support</a></li>
             <li><a href="#">Account</a></li>
