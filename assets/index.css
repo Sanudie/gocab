@@ -1,5 +1,9 @@
 @import url(styles.css);
 
+.wrapper {
+  margin-top: 4rem;
+}
+
    /* Hero Section */
    .hero {
     height: 100vh;

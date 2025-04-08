@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoCab</title>
-  <link rel="stylesheet" href="../assets/index.css">
-
-
+  <title>GoCab - Home</title>
+  <link rel="stylesheet" href="../../assets/index.css">
 </head>
 <body>
+  
 <?php include('navbar.php'); ?>
 
 <div class="wrapper">
-<section class="hero">
-    <div class="deco"></div>
-      <div class="hero-content">
-          <h1>Welcome to <span>GoCab</span></h1>
-          <p>Book your ride with ease and comfort</p>
-      </div>
-      <div class="hero-image">
-        <img src="../assets/images/hero-image.png" alt="Hero Image">
-      </div>
-</section>
 
-<section class="services" id="services">
+  <section class="hero">
+    <div class="deco"></div>
+    <div class="hero-content">
+        <h1>Welcome,<span>[CustomerName]</span></h1>
+        <p>Book your ride with ease and comfort</p>
+    </div>
+    <div class="hero-image">
+      <img src="../../assets/images/hero-image.png" alt="Hero Image">
+    </div>
+  </section>
+
+  <section class="services" id="services">
     <div class="container">
       <div class="section-title">
         <h2>Our Services</h2>
@@ -70,7 +70,7 @@
       <div class="why-us-grid">
         <div class="why-us-image">
           <div class="yellow-box"></div>
-          <img src="../assets/images/driver.webp" alt="Taxi service" class="why-us-img">
+          <img src="../../assets/images/driver.webp" alt="Taxi service" class="why-us-img">
           <div class="stats-box">
             <div class="stats-number">15+</div>
             <div class="stats-text">Years of Experience</div>
@@ -117,96 +117,101 @@
 
   <!-- Signup Modal -->
   <div id="signup-modal" class="modal-overlay signup">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Create a GoCab Account</h2>
-                <span class="modal-close" data-modal="signup-modal">&times;</span>
-            </div>
-            <div class="modal-body">
-                <form id="signup-form" method="POST" action="signup.php">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
-                        <div class="error-message" id="signup-name-error">Please enter your name</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
-                        <div class="error-message" id="signup-email-error">Please enter a valid email address</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone"  name="phone" class="form-control" placeholder="Enter your phone number" required>
-                        <div class="error-message" id="signup-phone-error">Please enter a valid phone number</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
-                        <div class="error-message" id="signup-password-error">Password must be at least 8 characters with a number and special character</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm_password">Confirm Password</label>
-                        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm your password" required>
-                        <div class="error-message" id="signup-confirm-password-error">Passwords do not match</div>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" id="terms" required>
-                        <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
-                        <div class="error-message" id="terms-error">You must agree to the terms</div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn">Create Account</button>
-                    </div>
-                    <div class="text-center mt-4">
-                        <p>Already have an account? <button class="login-btn" id="show-login">Login</button></p>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <div class="modal-content">
+      <div class="modal-header">
+          <h2>Create a GoCab Account</h2>
+          <span class="modal-close" data-modal="signup-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="signup-form" method="POST" action="signup.php">
+          <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="form-control" placeholder="Enter your full name" required>
+              <div class="error-message" id="signup-name-error">Please enter your name</div>
+          </div>
+          <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" required>
+              <div class="error-message" id="signup-email-error">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone"  name="phone" class="form-control" placeholder="Enter your phone number" required>
+              <div class="error-message" id="signup-phone-error">Please enter a valid phone number</div>
+          </div>
+          <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" class="form-control" placeholder="Create a password" required>
+              <div class="error-message" id="signup-password-error">Password must be at least 8 characters with a number and special character</div>
+          </div>
+          <div class="form-group">
+              <label for="confirm_password">Confirm Password</label>
+              <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm your password" required>
+              <div class="error-message" id="signup-confirm-password-error">Passwords do not match</div>
+          </div>
+          <div class="form-group">
+              <input type="checkbox" id="terms" required>
+              <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+              <div class="error-message" id="terms-error">You must agree to the terms</div>
+          </div>
+          <div class="text-center mt-4">
+              <button type="submit" class="btn">Create Account</button>
+          </div>
+          <div class="text-center mt-4">
+              <p>Already have an account? <button class="login-btn" id="show-login">Login</button></p>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 
-       <!-- Login Modal -->
-       <div id="login-modal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Login to GoCab</h2>
-                <span class="modal-close" data-modal="login-modal">&times;</span>
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Login to GoCab</h2>
+        <span class="modal-close" data-modal="login-modal">&times;</span>
+      </div>
+      <div class="modal-body">
+        <form id="login-form" method="POST" action="login.php">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input type="email" id="login-email" name="email" class="form-control" placeholder="Enter your email" required>
+            <div class="error-message" id="login-email-error">Please enter a valid email address</div>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" class="form-control" placeholder="Enter your password" required>
+            <div class="error-message" id="login-password-error">Password must be at least 6 characters</div>
+          </div>
+          <div class="form-group">
+            <label for="role">Select Role</label>
+            <select id="role" class="form-control" name="role" required>
+              <option value="" disabled selected>Select your role</option>
+              <option value="passenger">Passenger</option>
+              <option value="driver">Driver</option>
+              <option value="admin">Administrator</option>
+            </select>
+            <div class="error-message" id="role-error">Please select a role</div>
+          </div>
+          <div class="form-footer">
+            <div>
+              <input type="checkbox" id="remember-me" name="remeber-me">
+              <label for="remember-me">Remember me</label>
             </div>
-            <div class="modal-body">
-                <form id="login-form" method="POST" action="login.php">
-                    <div class="form-group">
-                        <label for="login-email">Email Address</label>
-                        <input type="email" id="login-email" name="email" class="form-control" placeholder="Enter your email" required>
-                        <div class="error-message" id="login-email-error">Please enter a valid email address</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" id="login-password" name="password" class="form-control" placeholder="Enter your password" required>
-                        <div class="error-message" id="login-password-error">Password must be at least 6 characters</div>
-                    </div>
-                    <div class="form-group">
-                    <label for="role">Select Role</label>
-                    <select id="role" class="form-control" name="role" required>
-                        <option value="" disabled selected>Select your role</option>
-                        <option value="passenger">Passenger</option>
-                        <option value="driver">Driver</option>
-                        <option value="admin">Administrator</option>
-                    </select>
-                    <div class="error-message" id="role-error">Please select a role</div>
-                </div>
-                    <div class="form-footer">
-                        <a href="#" id="forgot-password">Forgot Password?</a>
-                    </div>
-                    <div class="text-center mt-4">
-                        <button type="submit" class="btn">Login</button>
-                    </div>
-                    <div class="text-center mt-4">
-                        <p>Don't have an account? <button class="signup btn" id="show-signup" style="background-color:var(--primary-color); color:var(--secondary-color);">Sign up</button></p>
-                    </div>
-                </form>
-            </div>
-        </div>
+            <a href="#" id="forgot-password">Forgot Password?</a>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn">Login</button>
+          </div>
+          <div class="text-center mt-4">
+            <p>Don't have an account? <button class="signup btn" id="show-signup" style="background-color:var(--primary-color); color:var(--secondary-color);">Sign up</button></p>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
+
 </div>
 
 </body>
@@ -274,7 +279,30 @@ document.getElementById("signup-form").addEventListener("submit", function(event
     }
 });
 
+document.getElementById("login-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
 
+    // Collect the form data
+    var formData = new FormData(this);
+
+    // Send the data to the server
+    fetch("login.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Display success message and redirect
+            alert(data.success);
+            window.location.href = data.redirect;  // Redirect to the dashboard page
+        } else {
+            // Display error message
+            alert(data.error);
+        }
+    })
+    .catch(error => console.error("Error:", error));
+});
 
 
 </script>

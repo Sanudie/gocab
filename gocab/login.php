@@ -6,56 +6,49 @@ $user = "root";
 $password = "";
 $dbname = "gocab";
 
-$conn= new mysqli_connect($host,$user,$password,$dbname);
+$conn = mysqli_connect($host, $user, $password, $dbname);
+
 
 //check connection
 
-if($conn->connect_error){
-    die("Connection failed: ". $conn->connect_error);
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-//handle login request
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $email = isset($_POST["email"]) ? trim($_POST["email"]) : null;
-    $inputPassword = isset($_POST["password"]) ? $_POST["password"] : null;
-    $role = isset($_POST["role"]) ? $_POST["role"] : null;
 
-    // Check if all fields are filled
-    if (!$email || !$inputPassword || !$role) {
-        echo json_encode(["error" => "All fields are required"]);
-        exit();
+$email = $_POST['email'];
+$password = $_POST['password'];
+$role = $_POST['role'];
+
+$query = "SELECT * FROM users";
+$result = mysqli_query($conn, $query);
+
+$userfound=false;
+foreach ($result as $i){
+    var_dump(password_verify($password, $i['password_hash']));
+    if($i['email'] === $email && password_verify($password, $i['password_hash'])){
+        $userfound=true;
+        break;
     }
 }
+var_dump($userfound);
 
- // Check if user exists
- $stmt = $conn->prepare("SELECT id, name, email, phone, password_hash, role FROM users WHERE email = ? AND role = ?");
- $stmt->bind_param("ss", $email, $role);
- $stmt->execute();
- $result = $stmt->get_result();
-
- // Verify credentials
- if ($result->num_rows > 0) {
-     $user = $result->fetch_assoc();
-
-     // Verify password
-     if (password_verify($inputPassword, $user["password_hash"])) {
-         // Set session variables
-         $_SESSION["user_id"] = $user["id"];
-         $_SESSION["name"] = $user["name"];
-         $_SESSION["email"] = $user["email"];
-         $_SESSION["role"] = $user["role"];
-
-         // Successful login
-         echo json_encode(["success" => "Login successful", "redirect" => "dashboard.php"]);
-     } else {
-         echo json_encode(["error" => "Incorrect password"]);
-     }
- } else {
-     echo json_encode(["error" => "No account found with this email and role"]);
- }
-
- $stmt->close();
+if($userfound){
+    switch ($role) {
+        case 'admin':
+            header("Location: admin/index.php");
+            break;
+        case 'driver':
+            header("Location: driver_dashboard.php");
+            break;
+        case 'customer':
+            echo "hkgjgh";
+            header("Location: customer/index.php");
+            break;
+    }
+    exit();
+} 
+// header("Location: index.php");
 
 
 // Close connection
